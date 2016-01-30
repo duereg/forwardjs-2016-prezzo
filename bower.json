@@ -1,0 +1,7 @@
+{
+  "name": "presentation-using-es2015-in-your-code-today",
+  "version": "0.0.0",
+  "dependencies": {
+    "prism": "gh-pages"
+  }
+}
