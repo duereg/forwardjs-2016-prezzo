@@ -16,4 +16,5 @@ ES7 - released in 2016?
 
 
 https://github.com/thomasloh/5to6
-
+http://tvcutsem.github.io/js-membranes/
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy#Examples
