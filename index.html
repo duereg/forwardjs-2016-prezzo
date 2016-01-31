@@ -80,18 +80,15 @@
           <li><span class="date">JSX</span><span class="event">20%</span></li>
         </ul>
       </section>
-      <section data-bespoke-hash="what-works-everywhere">
+      <section data-bespoke-hash="what-works-everywhere-syntax">
         <h2>What Works Everywhere?</h2>
+        <h3>Syntax</h3>
         <ul>
           <li>let</li>
           <li>const</li>
           <li>Arrow Functions</li>
-          <li>Set</li>
-          <li>Map</li>
-          <li>WeakSet</li>
-          <li>WeakMap</li>
-          <li>Symbol</li>
-          <li>Promise</li>
+          <li>Object Literal Extensions</li>
+          <li>String Templates</li>
         </ul>
       </section>
       <section data-bespoke-hash="let">
@@ -170,6 +167,28 @@ singleParam => { statements }
 () => { statements }
 </code></pre>
       </section>
+      <section data-bespoke-hash="object-literals">
+        <h2>Object Literal Extensions</h2>
+        <pre><code class="language-javascript">// TODO
+</code></pre>
+      </section>
+      <section data-bespoke-hash="string templates">
+        <h2>String Templating</h2>
+        <pre><code class="language-javascript">// TODO
+</code></pre>
+      </section>
+      <section data-bespoke-hash="what-works-everywhere-ds">
+        <h2>What Works Everywhere?</h2>
+        <h3>Data Structures</h3>
+        <ul>
+          <li>Set</li>
+          <li>Map</li>
+          <li>WeakSet</li>
+          <li>WeakMap</li>
+          <li>Symbol</li>
+          <li>Promise</li>
+        </ul>
+      </section>
       <section data-bespoke-hash="set">
         <h2>Set</h2>
         <pre><code class="language-javascript">let s = new Set()
@@ -233,12 +252,29 @@ Object.keys(obj) // []
           <li><img src="images/DoYouEvenCodeBro.jpg" height="400px" /></li>
         </ul>
       </section>
+      <section data-bespoke-hash="what-else">
+        <h2>What else?</h2>
+        <ul>
+          <li>class</li>
+          <li>super</li>
+          <li>generators</li>
+        </ul>
+      </section>
+      <section data-bespoke-hash="what-am-I-missing">
+        <h2>What are we missing?</h2>
+        <ul>
+          <li>Proxies</li>
+          <li>Destructuring</li>
+          <li>subclassing Array, Function, etc</li>
+        </ul>
+      </section>
       <section data-bespoke-hash="es6-options">
         <h2>What are my options?</h2>
         <ul>
           <li><b>Client SPA in Chrome 49+</b>
             <ul>
               <li>91% of ES6</li>
+              <li>Proxies, Destructuring, subclassing</li>
               <li>no module import/export</li>
             </ul>
           </li>
@@ -251,7 +287,8 @@ Object.keys(obj) // []
           <li><b>Node 4/5 App with Babel</b>
             <ul>
               <li>75% of ES6</li>
-              <li>ES7 support</li>
+              <li>Destructuring</li>
+              <li>ES7 support (async, await)</li>
               <li>JSX, TypeScript, Flow, etc</li>
             </ul>
           </li>
