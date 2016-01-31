@@ -83,6 +83,9 @@
       <section data-bespoke-hash="what-works-everywhere">
         <h2>What Works Everywhere?</h2>
         <ul>
+          <li>let</li>
+          <li>const</li>
+          <li>Arrow Functions</li>
           <li>Set</li>
           <li>Map</li>
           <li>WeakSet</li>
@@ -90,6 +93,82 @@
           <li>Symbol</li>
           <li>Promise</li>
         </ul>
+      </section>
+      <section data-bespoke-hash="let">
+        <h2>let</h2>
+        <pre><code class="language-javascript">function varTest() {
+  var x = 31;
+  if (true) {
+    var x = 71;  // same variable!
+    console.log(x);  // 71
+  }
+  console.log(x);  // 71
+}
+</code></pre>
+      </section>
+      <section data-bespoke-hash="let-2">
+        <h2>let</h2>
+        <pre><code class="language-javascript">function letTest() {
+  let x = 31;
+  if (true) {
+    let x = 71;  // different variable
+    console.log(x);  // 71
+  }
+  console.log(x);  // 31
+}
+</code></pre>
+      </section>
+      <section data-bespoke-hash="let-3">
+        <h2>let errors</h2>
+        <pre><code class="language-javascript">if (x) {
+  let foo;
+  let foo; // TypeError thrown.
+}
+
+function do_something() {
+  console.log(foo); // ReferenceError
+  let foo = 2;
+}
+</code></pre>
+      </section>
+      <section data-bespoke-hash="const">
+        <h2>const</h2>
+        <pre><code class="language-javascript">const MY_FAV = 7;
+MY_FAV = 20; //fails FF, Chrome, not Safari
+
+console.log("my favorite number is: " + MY_FAV); // 7
+
+const MY_FAV = 20; //throws
+var MY_FAV = 20; //throws
+
+console.log("my favorite number is " + MY_FAV); // 7
+</code></pre>
+      </section>
+      <section data-bespoke-hash="const-2">
+        <h2>const</h2>
+        <pre><code class="language-javascript">const FOO; // SyntaxError: missing = in const declaration
+const MY_OBJECT = {"key": "value"}; // works
+
+//fails FF, Chrome, not Safari
+MY_OBJECT = {"OTHER_KEY": "value"};
+
+// Object attributes are not protected
+MY_OBJECT.key = "otherValue";
+</code></pre>
+      </section>
+      <section data-bespoke-hash="arrow-functions">
+        <h2>Arrow Functions</h2>
+        <pre><code class="language-javascript">(param1, param2, …, paramN) => { statements }
+(param1, param2, …, paramN) => expression
+         // equivalent to:  => { return expression; }
+         
+// Parentheses are optional when there's one parameter
+(singleParam) => { statements }
+singleParam => { statements }
+
+// A function with no parameters requires parentheses
+() => { statements }
+</code></pre>
       </section>
       <section data-bespoke-hash="set">
         <h2>Set</h2>
@@ -154,9 +233,29 @@ Object.keys(obj) // []
           <li><img src="images/DoYouEvenCodeBro.jpg" height="400px" /></li>
         </ul>
       </section>
-      <section data-bespoke-backdrop="emphatic" class="emphatic-text">
-        <h2>Emphatic Slide!</h2>
-        <h3>Powered by <a href="https://github.com/markdalgleish/bespoke-backdrop"></h3>
+      <section data-bespoke-hash="es6-options">
+        <h2>What are my options?</h2>
+        <ul>
+          <li><b>Client SPA in Chrome 49+</b>
+            <ul>
+              <li>91% of ES6</li>
+              <li>no module import/export</li>
+            </ul>
+          </li>
+          <li><b>IofT Application using XS6</b>
+            <ul>
+              <li>97% of ES6</li>
+              <li>limited to Kinoma hardware</li>
+            </ul>
+          </li>
+          <li><b>Node 4/5 App with Babel</b>
+            <ul>
+              <li>75% of ES6</li>
+              <li>ES7 support</li>
+              <li>JSX, TypeScript, Flow, etc</li>
+            </ul>
+          </li>
+        </ul>
       </section>
     </article>
     <div class="logo"></div>
