@@ -155,12 +155,97 @@ html
       section(data-bespoke-hash='what-works-everywhere')
         h2 What Works Everywhere?
         ul
+          li let
+          li const
+          li Arrow Functions
           li Set
           li Map
           li WeakSet
           li WeakMap
           li Symbol
           li Promise
+
+      section(data-bespoke-hash='let')
+        h2 let
+        pre
+          code.language-javascript.
+            function varTest() {
+              var x = 31;
+              if (true) {
+                var x = 71;  // same variable!
+                console.log(x);  // 71
+              }
+              console.log(x);  // 71
+            }
+
+      section(data-bespoke-hash='let-2')
+        h2 let
+        pre
+          code.language-javascript.
+            function letTest() {
+              let x = 31;
+              if (true) {
+                let x = 71;  // different variable
+                console.log(x);  // 71
+              }
+              console.log(x);  // 31
+            }
+
+      section(data-bespoke-hash='let-3')
+        h2 let errors
+        pre
+          code.language-javascript.
+            if (x) {
+              let foo;
+              let foo; // TypeError thrown.
+            }
+
+            function do_something() {
+              console.log(foo); // ReferenceError
+              let foo = 2;
+            }
+
+      section(data-bespoke-hash='const')
+        h2 const
+        pre
+          code.language-javascript.
+            const MY_FAV = 7;
+            MY_FAV = 20; //fails FF, Chrome, not Safari
+
+            console.log("my favorite number is: " + MY_FAV); // 7
+
+            const MY_FAV = 20; //throws
+            var MY_FAV = 20; //throws
+
+            console.log("my favorite number is " + MY_FAV); // 7
+
+      section(data-bespoke-hash='const-2')
+        h2 const
+        pre
+          code.language-javascript.
+            const FOO; // SyntaxError: missing = in const declaration
+            const MY_OBJECT = {"key": "value"}; // works
+
+            //fails FF, Chrome, not Safari
+            MY_OBJECT = {"OTHER_KEY": "value"};
+
+            // Object attributes are not protected
+            MY_OBJECT.key = "otherValue";
+
+      section(data-bespoke-hash='arrow-functions')
+        h2 Arrow Functions
+        pre
+          code.language-javascript.
+            (param1, param2, …, paramN) => { statements }
+            (param1, param2, …, paramN) => expression
+                     // equivalent to:  => { return expression; }
+
+            // Parentheses are optional when there's one parameter
+            (singleParam) => { statements }
+            singleParam => { statements }
+
+            // A function with no parameters requires parentheses
+            () => { statements }
 
       section(data-bespoke-hash='set')
         h2 Set
@@ -229,9 +314,28 @@ html
           li <img src="images/promises.png" width="400px" />
           li <img src="images/DoYouEvenCodeBro.jpg" height="400px" />
 
-      section.emphatic-text(data-bespoke-backdrop='emphatic')
-        h2 Emphatic Slide!
-        h3 Powered by <a href="https://github.com/markdalgleish/bespoke-backdrop">
+      section(data-bespoke-hash='es6-options')
+        h2 What are my options?
+        ul
+          li
+            b Client SPA in Chrome 49+
+            ul
+              li 91% of ES6
+              li no module import/export
+
+          li
+            b IofT Application using XS6
+            ul
+              li 97% of ES6
+              li limited to Kinoma hardware
+
+          li
+            b Node 4/5 App with Babel
+            ul
+              li 75% of ES6
+              li ES7 support
+              li JSX, TypeScript, Flow, etc
+
 
     div.logo
 
