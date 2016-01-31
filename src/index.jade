@@ -152,39 +152,86 @@ html
             span.date JSX
             span.event 20%
 
-      section
-        h2 Syntax Highlighting
-        h3 Powered by <a href="http://twitter.com/LeaVerou">Lea Verou</a>'s <a href="https://github.com/LeaVerou/prism">Prism</a>
+      section(data-bespoke-hash='what-works-everywhere')
+        h2 What Works Everywhere?
+        ul
+          li Set
+          li Map
+          li WeakSet
+          li WeakMap
+          li Symbol
+          li Promise
+
+      section(data-bespoke-hash='set')
+        h2 Set
         pre
           code.language-javascript.
-            bespoke.from('article', [
-              classes(),
-              keys(),
-              touch(),
-              bullets('li, .bullet')
-            ]);
+            let s = new Set()
+            s.add("hello").add("goodbye").add("hello")
+            s.size === 2
+            s.has("hello") === true
+            for (let key of s.values()) // insertion order
+              console.log(key)
 
-      section(data-bespoke-hash='named-route')
-        h2 Named Route
-        h3 Powered by <a href="https://github.com/markdalgleish/bespoke-hash">bespoke-hash</a>
-        p Look up! This route has been named with a <em>'data-bespoke-hash'</em> attribute.
+      section(data-bespoke-hash='map')
+        h2 Map
+        pre
+          code.language-javascript.
+            let m = new Map()
+            m.set("hello", 42)
+            m.set(s, 34)
+            m.get(s) === 34
+            m.size === 2
+            for (let [ key, val ] of m.entries())
+                console.log(key + " = " + val)
+
+      section(data-bespoke-hash='weakset')
+        h2 WeakSet
+        pre
+          code.language-javascript.
+            let thingToDelete = {};
+            let ws = new WeakSet()
+            ws.set(thingToDelete) //cannot be primitive
+            ws.has(thingToDelete) === true
+            thingToDelete = null;
+            ws.has(thingToDelete) === false
+
+      section(data-bespoke-hash='weakmap')
+        h2 WeakMap
+        pre
+          code.language-javascript.
+            let thingToDelete = {};
+            let wm = new WeakMap()
+            wm.set(thingToDelete, 42) //cannot be primitive
+            wm.get(thingToDelete) === 42
+            thingToDelete = null;
+            wm.has(thingToDelete) === false
+            wm.get(thingToDelete) === undefined
+
+      section(data-bespoke-hash='symbol')
+        h2 Symbol
+        pre
+          code.language-javascript.
+            Symbol("foo") !== Symbol("foo")
+            const foo = Symbol()
+            const bar = Symbol()
+            typeof foo === "symbol"
+            typeof bar === "symbol"
+            let obj = {}
+            obj[foo] = "foo"
+            obj[bar] = "bar"
+            JSON.stringify(obj) // {}
+            Object.keys(obj) // []
+
+      section(data-bespoke-hash='promise')
+        h2 Promise
+        ul
+          li <img src="images/promises.png" width="400px" />
+          li <img src="images/DoYouEvenCodeBro.jpg" height="400px" />
 
       section.emphatic-text(data-bespoke-backdrop='emphatic')
         h2 Emphatic Slide!
-        h3 Powered by <a href="https://github.com/markdalgleish/bespoke-backdrop">bespoke-backdrop</a>
-
-      section
-        h2.bullet Just the beginning...
-        br
-        ul
-          li Edit <a href="http://jade-lang.com/">Jade</a> markup in <em>'src/index.jade'</em>
-          li Edit <a href="http://learnboost.github.io/stylus/">Stylus</a> styles in <em>'src/styles/main.styl'</em>
-          li Edit JavaScript in <em>'src/scripts/main.js'</em>
-        br
-        ul
-          li
-            strong Enjoy! :)
-            a(href='http://twitter.com/markdalgleish')  -@markdalgleish
+        h3 Powered by <a href="https://github.com/markdalgleish/bespoke-backdrop">
 
     div.logo
 
