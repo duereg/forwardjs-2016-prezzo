@@ -152,18 +152,15 @@ html
             span.date JSX
             span.event 20%
 
-      section(data-bespoke-hash='what-works-everywhere')
+      section(data-bespoke-hash='what-works-everywhere-syntax')
         h2 What Works Everywhere?
+        h3 Syntax
         ul
           li let
           li const
           li Arrow Functions
-          li Set
-          li Map
-          li WeakSet
-          li WeakMap
-          li Symbol
-          li Promise
+          li Object Literal Extensions
+          li String Templates
 
       section(data-bespoke-hash='let')
         h2 let
@@ -247,6 +244,29 @@ html
             // A function with no parameters requires parentheses
             () => { statements }
 
+      section(data-bespoke-hash='object-literals')
+        h2 Object Literal Extensions
+        pre
+          code.language-javascript.
+            // TODO
+
+      section(data-bespoke-hash='string templates')
+        h2 String Templating
+        pre
+          code.language-javascript.
+            // TODO
+
+      section(data-bespoke-hash='what-works-everywhere-ds')
+        h2 What Works Everywhere?
+        h3 Data Structures
+        ul
+          li Set
+          li Map
+          li WeakSet
+          li WeakMap
+          li Symbol
+          li Promise
+
       section(data-bespoke-hash='set')
         h2 Set
         pre
@@ -314,6 +334,20 @@ html
           li <img src="images/promises.png" width="400px" />
           li <img src="images/DoYouEvenCodeBro.jpg" height="400px" />
 
+      section(data-bespoke-hash='what-else')
+        h2 What else?
+        ul
+          li class
+          li super
+          li generators
+
+      section(data-bespoke-hash='what-am-I-missing')
+        h2 What are we missing?
+        ul
+          li Proxies
+          li Destructuring
+          li subclassing Array, Function, etc
+
       section(data-bespoke-hash='es6-options')
         h2 What are my options?
         ul
@@ -321,6 +355,7 @@ html
             b Client SPA in Chrome 49+
             ul
               li 91% of ES6
+              li Proxies, Destructuring, subclassing
               li no module import/export
 
           li
@@ -333,7 +368,8 @@ html
             b Node 4/5 App with Babel
             ul
               li 75% of ES6
-              li ES7 support
+              li Destructuring
+              li ES7 support (async, await)
               li JSX, TypeScript, Flow, etc
 
 
