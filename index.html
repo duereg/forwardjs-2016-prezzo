@@ -80,36 +80,83 @@
           <li><span class="date">JSX</span><span class="event">20%</span></li>
         </ul>
       </section>
-      <section>
-        <h2>Syntax Highlighting</h2>
-        <h3>Powered by <a href="http://twitter.com/LeaVerou">Lea Verou</a>'s <a href="https://github.com/LeaVerou/prism">Prism</a></h3>
-        <pre><code class="language-javascript">bespoke.from('article', [
-  classes(),
-  keys(),
-  touch(),
-  bullets('li, .bullet')
-]);
+      <section data-bespoke-hash="what-works-everywhere">
+        <h2>What Works Everywhere?</h2>
+        <ul>
+          <li>Set</li>
+          <li>Map</li>
+          <li>WeakSet</li>
+          <li>WeakMap</li>
+          <li>Symbol</li>
+          <li>Promise</li>
+        </ul>
+      </section>
+      <section data-bespoke-hash="set">
+        <h2>Set</h2>
+        <pre><code class="language-javascript">let s = new Set()
+s.add("hello").add("goodbye").add("hello")
+s.size === 2
+s.has("hello") === true
+for (let key of s.values()) // insertion order
+  console.log(key)
+  </code></pre>
+      </section>
+      <section data-bespoke-hash="map">
+        <h2>Map</h2>
+        <pre><code class="language-javascript">let m = new Map()
+m.set("hello", 42)
+m.set(s, 34)
+m.get(s) === 34
+m.size === 2
+for (let [ key, val ] of m.entries())
+    console.log(key + " = " + val)
+    </code></pre>
+      </section>
+      <section data-bespoke-hash="weakset">
+        <h2>WeakSet</h2>
+        <pre><code class="language-javascript">let thingToDelete = {};
+let ws = new WeakSet()
+ws.set(thingToDelete) //cannot be primitive
+ws.has(thingToDelete) === true
+thingToDelete = null;
+ws.has(thingToDelete) === false
 </code></pre>
       </section>
-      <section data-bespoke-hash="named-route">
-        <h2>Named Route</h2>
-        <h3>Powered by <a href="https://github.com/markdalgleish/bespoke-hash">bespoke-hash</a></h3>
-        <p>Look up! This route has been named with a <em>'data-bespoke-hash'</em> attribute.</p>
+      <section data-bespoke-hash="weakmap">
+        <h2>WeakMap</h2>
+        <pre><code class="language-javascript">let thingToDelete = {};
+let wm = new WeakMap()
+wm.set(thingToDelete, 42) //cannot be primitive
+wm.get(thingToDelete) === 42
+thingToDelete = null;
+wm.has(thingToDelete) === false
+wm.get(thingToDelete) === undefined
+</code></pre>
+      </section>
+      <section data-bespoke-hash="symbol">
+        <h2>Symbol</h2>
+        <pre><code class="language-javascript">Symbol("foo") !== Symbol("foo")
+const foo = Symbol()
+const bar = Symbol()
+typeof foo === "symbol"
+typeof bar === "symbol"
+let obj = {}
+obj[foo] = "foo"
+obj[bar] = "bar"
+JSON.stringify(obj) // {}
+Object.keys(obj) // []
+</code></pre>
+      </section>
+      <section data-bespoke-hash="promise">
+        <h2>Promise</h2>
+        <ul>
+          <li><img src="images/promises.png" width="400px" /></li>
+          <li><img src="images/DoYouEvenCodeBro.jpg" height="400px" /></li>
+        </ul>
       </section>
       <section data-bespoke-backdrop="emphatic" class="emphatic-text">
         <h2>Emphatic Slide!</h2>
-        <h3>Powered by <a href="https://github.com/markdalgleish/bespoke-backdrop">bespoke-backdrop</a></h3>
-      </section>
-      <section>
-        <h2 class="bullet">Just the beginning...</h2><br>
-        <ul>
-          <li>Edit <a href="http://jade-lang.com/">Jade</a> markup in <em>'src/index.jade'</em></li>
-          <li>Edit <a href="http://learnboost.github.io/stylus/">Stylus</a> styles in <em>'src/styles/main.styl'</em></li>
-          <li>Edit JavaScript in <em>'src/scripts/main.js'</em></li>
-        </ul><br>
-        <ul>
-          <li><strong>Enjoy! :)</strong><a href="http://twitter.com/markdalgleish"> -@markdalgleish</a></li>
-        </ul>
+        <h3>Powered by <a href="https://github.com/markdalgleish/bespoke-backdrop"></h3>
       </section>
     </article>
     <div class="logo"></div>
