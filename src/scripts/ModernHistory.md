@@ -1,19 +1,7 @@
+Modern History (2:30 mins)
+
 io.js first update of v8 in FOREVER
 
-The PR that signalled the end of node.js as we know it:
-
-"won't merge this type of trivial change"
-
-https://github.com/joyent/libuv/pull/1015
-
-Ben closes PR
-Isaas reopened and merges
-Ben reverts change
-
-Joyent CEO says "Ben Noordhuis doesn't work for Joyent, but if did, he'd be fired"
-
-http://www.dailydot.com/news/github-gendered-pronoun-debate/
-https://nodejs.org/en/blog/uncategorized/bnoordhuis-departure/
 http://izs.me/
 http://kangax.github.io/compat-table/es6/
 http://kangax.github.io/compat-table/es7/#experimental-flag-note
@@ -24,4 +12,6 @@ http://webreflection.blogspot.com/2015/01/javascript-and-living-ecmascript.html
 ES6 - 6th edition, but 2015 release
 ES7 - released in 2016?
 
+
+https://github.com/thomasloh/5to6
 
