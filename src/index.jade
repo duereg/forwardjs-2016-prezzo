@@ -11,15 +11,15 @@ html
 
     article.us-hero
 
-      section
+      section(data-bespoke-hash='javascript-today')
         h1 JavaScript today
-        h3 How we got here, what we learned, where we are
+        h3 How we got here, where we are, what's next
         h3 Powered by <a href="http://tech.opentable.com/">OpenTable Engineering</a>
         h4 Matt Blair
         h5 Principal Software Engineer, Search Platform
         h5 mblair@opentable.com
 
-      section
+      section(data-bespoke-hash='ancient-history')
         h2 Ancient History
         ul
           li
@@ -31,8 +31,6 @@ html
           li
             span.date Oct 2007
             span.event Microsoft goes on attack
-          li
-            <img src="images/community-flame-war.gif" />
           li
             <img src="images/bullshit.jpg" />
           li
@@ -50,15 +48,15 @@ html
             span.date Nov 2013
             span.event The beginning of the end of Joyent and node.js
           li
-            <img src="images/eddie-izzard-popcorn-gif-o.gif" />
-          li
             span.date Dec 2013
             span.event Ben Noordhuis (#3) stops contributing to node.js
           li
             span.date Dec 2013
             span.event Isaac Schlueter (#2) leaves Joyent
+          li
+            <img src="images/popcorn2.gif" />
 
-      section
+      section(data-bespoke-hash='modern-history')
         h2 Modern History
         ul
           li
@@ -68,7 +66,7 @@ html
             span.date Nov 2014
             span.event Fedor Indutny forks node.js into io.js
           li
-            <img src="images/popcorn2.gif" />
+            <img src="images/eddie-izzard-popcorn-gif-o.gif" />
           li
             span.date Jan 2015
             span.event io.js v1, TC39 moves to annual releases (ES2015)
@@ -97,17 +95,62 @@ html
             span.date Jan 2016
             span.event Chrome 4.9 - 91% ES 2015 support
 
-      section
-        h2 Responsive Slides
-        h3 Powered by <a href="https://github.com/markdalgleish/bespoke-scale">bespoke-scale</a>
-
-      section
-        h2 Bullet List
-        h3.bullet Powered by <a href="https://github.com/markdalgleish/bespoke-bullets">bespoke-bullets</a>
+      section(data-bespoke-hash='browsers')
+        h2 Where we are - Browsers
         ul
-          li Bullet 1
-          li Bullet 2
-          li Bullet 3
+          li
+            span.date Chrome 49+
+            span.event 91%
+          li
+            span.date FF 45
+            span.event 85%
+          li
+            span.date Edge 13
+            span.event 83%
+          li
+            span.date WebKit
+            span.event 83%
+          li
+            span.date Safari 9
+            span.event 54%
+
+      section(data-bespoke-hash='runtimes')
+        h2 Where we are - Runtimes
+        ul
+          li
+            span.date XS6
+            span.event 97%
+          li
+            span.date EchoJS
+            span.event 66%
+          li
+            span.date Node 5.0
+            span.event 57%
+          li
+            span.date Node 4.0
+            span.event 52%
+          li
+            span.date Node 0.12
+            span.event 17%
+
+      section(data-bespoke-hash='compilers')
+        h2 Where we are - Compilers
+        ul
+          li
+            span.date Babel
+            span.event 76%
+          li
+            span.date Traceur
+            span.event 59%
+          li
+            span.date TypeScript
+            span.event 56%
+          li
+            span.date Closure
+            span.event 31%
+          li
+            span.date JSX
+            span.event 20%
 
       section
         h2 Syntax Highlighting
