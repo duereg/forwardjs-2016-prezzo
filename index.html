@@ -16,23 +16,6 @@
         <h5>Principal Software Engineer, Search Platform</h5>
         <h5>mblair@opentable.com</h5>
       </section>
-      <section data-bespoke-hash="modern-history">
-        <h2>Modern History</h2>
-        <ul>
-          <li><span class="date">Sep 2014</span><span class="event">First commit to 6to5 project</span></li>
-          <li><span class="date">Nov 2014</span><span class="event">Fedor Indutny forks node.js into io.js</span></li>
-          <li><img src="images/popcorn.gif" /></li>
-          <li><span class="date">Jan 2015</span><span class="event">io.js v1, TC39 moves to annual releases (ES2015)</span></li>
-          <li><span class="date">Feb 2015</span><span class="event">babel v4 - 6to5 renamed</span></li>
-          <li><span class="date">Apr 2015</span><span class="event">babel v5 - ES7!!!</span></li>
-          <li><span class="date">May 2015</span><span class="event">io.js v2</span></li>
-          <li><span class="date">Jun 2015</span><span class="event">ES6/ES2015 Spec Released</span></li>
-          <li><span class="date">Aug 2015</span><span class="event">io.js v3</span></li>
-          <li><span class="date">Sep 2015</span><span class="event">io.js v3.3.1, npm v4</span></li>
-          <li><span class="date">Oct 2015</span><span class="event">node v5, babel v6</span></li>
-          <li><span class="date">Jan 2016</span><span class="event">Chrome 4.9 - 91% ES 2015 support</span></li>
-        </ul>
-      </section>
       <section data-bespoke-hash="browsers">
         <h2>Where we are - Browsers</h2>
         <ul>
@@ -46,21 +29,23 @@
       <section data-bespoke-hash="runtimes">
         <h2>Where we are - Runtimes</h2>
         <ul>
-          <li><span class="date">XS6</span><span class="event">97%</span></li>
-          <li><span class="date">EchoJS</span><span class="event">66%</span></li>
+          <li><span class="date">XS6 7.1.45</span><span class="event">97%</span></li>
+          <li><span class="date">
+              <div>EchoJS</div>
+              <div>0.0.0-alpha2</div></span><span class="event">66%</span></li>
           <li><span class="date">Node 5.0</span><span class="event">57%</span></li>
           <li><span class="date">Node 4.0</span><span class="event">52%</span></li>
           <li><span class="date">Node 0.12</span><span class="event">17%</span></li>
         </ul>
       </section>
-      <section data-bespoke-hash="compilers">
-        <h2>Where we are - Compilers</h2>
+      <section data-bespoke-hash="transpilers">
+        <h2>Where we are - Transpilers</h2>
         <ul>
-          <li><span class="date">Babel</span><span class="event">76%</span></li>
-          <li><span class="date">Traceur</span><span class="event">59%</span></li>
-          <li><span class="date">TypeScript</span><span class="event">56%</span></li>
-          <li><span class="date">Closure</span><span class="event">31%</span></li>
-          <li><span class="date">JSX</span><span class="event">20%</span></li>
+          <li><span class="date">Babel 6.4.6</span><span class="event">76%</span></li>
+          <li><span class="date">Traceur 0.0.102</span><span class="event">59%</span></li>
+          <li><span class="date">TypeScript 1.7.5</span><span class="event">56%</span></li>
+          <li><span class="date">Closure v20160125</span><span class="event">31%</span></li>
+          <li><span class="date">JSX 0.9.89</span><span class="event">20%</span></li>
         </ul>
       </section>
       <section data-bespoke-hash="going-forward">
@@ -70,8 +55,9 @@
         <h2>What Works Everywhere?</h2>
         <h3>Syntax</h3>
         <ul>
-          <li>let</li>
-          <li>const</li>
+          <li>requires 'use strict' in some environments</li>
+          <li><b>let</b></li>
+          <li><b>const</b></li>
           <li>Arrow Functions</li>
           <li>Object Literal Extensions</li>
           <li>String Templates</li>
@@ -141,10 +127,10 @@ MY_OBJECT.key = "otherValue";
       </section>
       <section data-bespoke-hash="arrow-functions">
         <h2>Arrow Functions</h2>
-        <pre><code class="language-javascript">(param1, param2, …, paramN) => { statements }
-(param1, param2, …, paramN) => expression
-         // equivalent to:  => { return expression; }
-         
+        <pre><code class="language-javascript">(a1, a2, …, aN) => { statements }
+(a1, a2, …, aN) => expression
+  // equal to:  => { return expression; }
+  
 // Parentheses are optional when there's one parameter
 (singleParam) => { statements }
 singleParam => { statements }
@@ -155,13 +141,27 @@ singleParam => { statements }
       </section>
       <section data-bespoke-hash="object-literals">
         <h2>Object Literal Extensions</h2>
-        <pre><code class="language-javascript">var a = 103;
-var foo = 'bar'
+        <pre><code class="language-javascript">var a = 103, bar = 'foo'
+var randomName = Math.random()
+var obj = {
+  a: a,
+  m: function(z) {return z + this.a},
+}
+obj[bar] = 104;
+Object.defineProperty(obj, randomName, {
+  get: function() {return this.a() },
+})
+</code></pre>
+      </section>
+      <section data-bespoke-hash="object-literals">
+        <h2>Object Literal Extensions</h2>
+        <pre><code class="language-javascript">var a = 103, bar = 'foo'
+var randomName = Math.random()
 var obj = {
   a, //object shorthand
   m(z) {return z + this.a}, // function shorthand
-  [bar]: 104, // foo: 104
-  get [Math.random()]() {return this.a}, //
+  [bar]: 104, // Computed Property Names
+  get [randomName]() {return this.a}
 }
 </code></pre>
       </section>
@@ -176,6 +176,7 @@ var a = 5, b = 10;
 console.log(`Fifteen is ${a + b} and\nnot ${2 * a + b}.`);
 </code></pre>
       </section>
+      <!-- 14 minutes at this point-->
       <section data-bespoke-hash="what-works-everywhere-ds">
         <h2>What Works Everywhere?</h2>
         <h3>Data Structures</h3>
@@ -251,9 +252,9 @@ Object.keys(obj) // []
         <h2>Promise</h2>
         <ul>
           <li><img src="images/promises.png" width="400px" /></li>
-          <li><img src="images/DoYouEvenCodeBro.jpg" height="400px" /></li>
         </ul>
       </section>
+      <!-- 16 minutes, rushing, not going over code-->
       <section data-bespoke-hash="what-else">
         <h2>What else?</h2>
         <ul>
