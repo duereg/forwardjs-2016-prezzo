@@ -15,3 +15,9 @@ Options
   - ES7 support
   - Custom plugin/transpiler support
   - JSX, TypeScript, Flow support
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy#Examples
+
+http://tvcutsem.github.io/js-membranes/
+
+http://v8project.blogspot.com/2016/01/v8-release-49.html
