@@ -7,6 +7,3 @@ Matt Blair
  - how the language got where it is
  - what was learned along the way
  - where we are now
-
-http://kangax.github.io/compat-table/es6/
-http://es6-features.org/
