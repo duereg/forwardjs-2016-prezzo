@@ -56,44 +56,44 @@ html
       //-     li
       //-       <img src="images/popcorn2.gif" />
 
-      section(data-bespoke-hash='modern-history')
-        h2 Modern History
-        ul
-          li
-            span.date Sep 2014
-            span.event First commit to 6to5 project
-          li
-            span.date Nov 2014
-            span.event Fedor Indutny forks node.js into io.js
-          li
-            <img src="images/popcorn.gif" />
-          li
-            span.date Jan 2015
-            span.event io.js v1, TC39 moves to annual releases (ES2015)
-          li
-            span.date Feb 2015
-            span.event babel v4 - 6to5 renamed
-          li
-            span.date Apr 2015
-            span.event babel v5 - ES7!!!
-          li
-            span.date May 2015
-            span.event io.js v2
-          li
-            span.date Jun 2015
-            span.event ES6/ES2015 Spec Released
-          li
-            span.date Aug 2015
-            span.event io.js v3
-          li
-            span.date Sep 2015
-            span.event io.js v3.3.1, npm v4
-          li
-            span.date Oct 2015
-            span.event node v5, babel v6
-          li
-            span.date Jan 2016
-            span.event Chrome 4.9 - 91% ES 2015 support
+      //- section(data-bespoke-hash='modern-history')
+      //-   h2 Modern History
+      //-   ul
+      //-     li
+      //-       span.date Sep 2014
+      //-       span.event First commit to 6to5 project
+      //-     li
+      //-       span.date Nov 2014
+      //-       span.event Fedor Indutny forks node.js into io.js
+      //-     li
+      //-       <img src="images/popcorn.gif" />
+      //-     li
+      //-       span.date Jan 2015
+      //-       span.event io.js v1, TC39 moves to annual releases (ES2015)
+      //-     li
+      //-       span.date Feb 2015
+      //-       span.event babel v4 - 6to5 renamed
+      //-     li
+      //-       span.date Apr 2015
+      //-       span.event babel v5 - ES7!!!
+      //-     li
+      //-       span.date May 2015
+      //-       span.event io.js v2
+      //-     li
+      //-       span.date Jun 2015
+      //-       span.event ES6/ES2015 Spec Released
+      //-     li
+      //-       span.date Aug 2015
+      //-       span.event io.js v3
+      //-     li
+      //-       span.date Sep 2015
+      //-       span.event io.js v3.3.1, npm v4
+      //-     li
+      //-       span.date Oct 2015
+      //-       span.event node v5, babel v6
+      //-     li
+      //-       span.date Jan 2016
+      //-       span.event Chrome 4.9 - 91% ES 2015 support
 
       section(data-bespoke-hash='browsers')
         h2 Where we are - Browsers
@@ -118,10 +118,12 @@ html
         h2 Where we are - Runtimes
         ul
           li
-            span.date XS6
+            span.date XS6 7.1.45
             span.event 97%
           li
-            span.date EchoJS
+            span.date
+              div EchoJS
+              div 0.0.0-alpha2
             span.event 66%
           li
             span.date Node 5.0
@@ -133,23 +135,23 @@ html
             span.date Node 0.12
             span.event 17%
 
-      section(data-bespoke-hash='compilers')
-        h2 Where we are - Compilers
+      section(data-bespoke-hash='transpilers')
+        h2 Where we are - Transpilers
         ul
           li
-            span.date Babel
+            span.date Babel 6.4.6
             span.event 76%
           li
-            span.date Traceur
+            span.date Traceur 0.0.102
             span.event 59%
           li
-            span.date TypeScript
+            span.date TypeScript 1.7.5
             span.event 56%
           li
-            span.date Closure
+            span.date Closure v20160125
             span.event 31%
           li
-            span.date JSX
+            span.date JSX 0.9.89
             span.event 20%
 
       section(data-bespoke-hash='going-forward')
@@ -160,8 +162,11 @@ html
         h2 What Works Everywhere?
         h3 Syntax
         ul
-          li let
-          li const
+          li requires 'use strict' in some environments
+          li
+            b let
+          li
+            b const
           li Arrow Functions
           li Object Literal Extensions
           li String Templates
@@ -237,9 +242,9 @@ html
         h2 Arrow Functions
         pre
           code.language-javascript.
-            (param1, param2, …, paramN) => { statements }
-            (param1, param2, …, paramN) => expression
-                     // equivalent to:  => { return expression; }
+            (a1, a2, …, aN) => { statements }
+            (a1, a2, …, aN) => expression
+              // equal to:  => { return expression; }
 
             // Parentheses are optional when there's one parameter
             (singleParam) => { statements }
@@ -252,13 +257,28 @@ html
         h2 Object Literal Extensions
         pre
           code.language-javascript.
-            var a = 103;
-            var foo = 'bar'
+            var a = 103, bar = 'foo'
+            var randomName = Math.random()
+            var obj = {
+              a: a,
+              m: function(z) {return z + this.a},
+            }
+            obj[bar] = 104;
+            Object.defineProperty(obj, randomName, {
+              get: function() {return this.a() },
+            })
+
+      section(data-bespoke-hash='object-literals')
+        h2 Object Literal Extensions
+        pre
+          code.language-javascript.
+            var a = 103, bar = 'foo'
+            var randomName = Math.random()
             var obj = {
               a, //object shorthand
               m(z) {return z + this.a}, // function shorthand
-              [bar]: 104, // foo: 104
-              get [Math.random()]() {return this.a}, //
+              [bar]: 104, // Computed Property Names
+              get [randomName]() {return this.a}
             }
 
       section(data-bespoke-hash='string templates')
@@ -273,6 +293,7 @@ html
             var a = 5, b = 10;
             console.log(`Fifteen is ${a + b} and\nnot ${2 * a + b}.`);
 
+      // 14 minutes at this point
       section(data-bespoke-hash='what-works-everywhere-ds')
         h2 What Works Everywhere?
         h3 Data Structures
@@ -353,8 +374,8 @@ html
         h2 Promise
         ul
           li <img src="images/promises.png" width="400px" />
-          li <img src="images/DoYouEvenCodeBro.jpg" height="400px" />
 
+      // 16 minutes, rushing, not going over code
       section(data-bespoke-hash='what-else')
         h2 What else?
         ul
