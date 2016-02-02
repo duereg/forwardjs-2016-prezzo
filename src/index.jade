@@ -18,6 +18,8 @@ html
         h4 Matt Blair
         h5 Principal Software Engineer, Search Platform
         h5 mblair@opentable.com
+        h5 http://blog.mattblair.co/forwardjs-2016-prezzo
+        h5 https://github.com/duereg/forwardjs-2016-prezzo
 
       section(data-bespoke-hash='browsers')
         h2 Where we are - Browsers
@@ -182,15 +184,14 @@ html
         pre
           code.language-javascript.
             var a = 103, bar = 'foo'
-            var randomName = Math.random()
             var obj = {
               a: a,
               m: function(z) {return z + this.a},
             }
-            obj[bar] = 104;
-            Object.defineProperty(obj, randomName, {
+            obj[bar] = 104 // obj.foo
+            Object.defineProperty(obj, bar + a, {
               get: function() {return this.a() },
-            })
+            }) //obj.foo103
 
       section(data-bespoke-hash='object-literals')
         h2 Object Literal Extensions
@@ -202,7 +203,7 @@ html
               a, //object shorthand
               m(z) {return z + this.a}, // function shorthand
               [bar]: 104, // Computed Property Names
-              get [randomName]() {return this.a}
+              get [bar + a]() {return this.a}
             }
 
       section(data-bespoke-hash='string templates')
@@ -290,10 +291,6 @@ html
             JSON.stringify(obj) // {}
             Object.keys(obj) // []
 
-      section(data-bespoke-hash='symbol-rage')
-        h2 Symbol
-        <img src='images/oop-in-js.jpg' height="400px" />
-
       section(data-bespoke-hash='promise')
         h2 Promise
         ul
@@ -312,7 +309,7 @@ html
         ul
           li Proxies
           li Destructuring
-          li subclassing Array, Function, etc
+          li Subclassing Array, Function, etc
 
       section(data-bespoke-hash='es6-options')
         h2 What are my options?
@@ -338,7 +335,7 @@ html
               li ES7 support (async, await)
               li JSX, TypeScript, Flow, etc
 
-      section(data-bespoke-hash='es6-options')
+      section(data-bespoke-hash='thanks')
         h2 Thanks!
         h3 For more information:
         ul
@@ -347,6 +344,6 @@ html
           li http://blog.mattblair.co/forwardjs-2016-prezzo
           li https://github.com/duereg/forwardjs-2016-prezzo
 
-    div.logo
+    //- div.logo
 
     script(src='build/build.js')
