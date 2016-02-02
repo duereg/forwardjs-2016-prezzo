@@ -15,6 +15,8 @@
         <h4>Matt Blair</h4>
         <h5>Principal Software Engineer, Search Platform</h5>
         <h5>mblair@opentable.com</h5>
+        <h5>http://blog.mattblair.co/forwardjs-2016-prezzo</h5>
+        <h5>https://github.com/duereg/forwardjs-2016-prezzo</h5>
       </section>
       <section data-bespoke-hash="browsers">
         <h2>Where we are - Browsers</h2>
@@ -142,15 +144,14 @@ singleParam => { statements }
       <section data-bespoke-hash="object-literals">
         <h2>Object Literal Extensions</h2>
         <pre><code class="language-javascript">var a = 103, bar = 'foo'
-var randomName = Math.random()
 var obj = {
   a: a,
   m: function(z) {return z + this.a},
 }
-obj[bar] = 104;
-Object.defineProperty(obj, randomName, {
+obj[bar] = 104 // obj.foo
+Object.defineProperty(obj, bar + a, {
   get: function() {return this.a() },
-})
+}) //obj.foo103
 </code></pre>
       </section>
       <section data-bespoke-hash="object-literals">
@@ -161,7 +162,7 @@ var obj = {
   a, //object shorthand
   m(z) {return z + this.a}, // function shorthand
   [bar]: 104, // Computed Property Names
-  get [randomName]() {return this.a}
+  get [bar + a]() {return this.a}
 }
 </code></pre>
       </section>
@@ -245,9 +246,6 @@ JSON.stringify(obj) // {}
 Object.keys(obj) // []
 </code></pre>
       </section>
-      <section data-bespoke-hash="symbol-rage">
-        <h2>Symbol</h2><img src='images/oop-in-js.jpg' height="400px" />
-      </section>
       <section data-bespoke-hash="promise">
         <h2>Promise</h2>
         <ul>
@@ -268,7 +266,7 @@ Object.keys(obj) // []
         <ul>
           <li>Proxies</li>
           <li>Destructuring</li>
-          <li>subclassing Array, Function, etc</li>
+          <li>Subclassing Array, Function, etc</li>
         </ul>
       </section>
       <section data-bespoke-hash="es6-options">
@@ -297,7 +295,7 @@ Object.keys(obj) // []
           </li>
         </ul>
       </section>
-      <section data-bespoke-hash="es6-options">
+      <section data-bespoke-hash="thanks">
         <h2>Thanks!</h2>
         <h3>For more information:</h3>
         <ul>
@@ -308,7 +306,6 @@ Object.keys(obj) // []
         </ul>
       </section>
     </article>
-    <div class="logo"></div>
     <script src="build/build.js"></script>
   </body>
 </html>
