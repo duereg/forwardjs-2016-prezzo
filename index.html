@@ -10,34 +10,22 @@
     <article class="us-hero">
       <section data-bespoke-hash="javascript-today">
         <h1>JavaScript today</h1>
-        <h3>How we got here, where we are, what's next</h3>
+        <h3>Where we are, where we're going, what's next</h3>
         <h3>Powered by <a href="http://tech.opentable.com/">OpenTable Engineering</a></h3>
         <h4>Matt Blair</h4>
         <h5>Principal Software Engineer, Search Platform</h5>
         <h5>mblair@opentable.com</h5>
+        <h5>&nbsp;</h5>
         <h5>http://blog.mattblair.co/forwardjs-2016-prezzo</h5>
         <h5>https://github.com/duereg/forwardjs-2016-prezzo</h5>
       </section>
       <section data-bespoke-hash="browsers">
         <h2>Where we are - Browsers</h2>
         <ul>
-          <li><span class="date">Chrome 49+</span><span class="event">91%</span></li>
+          <li><span class="date">Chrome 49+, Opera 36+</span><span class="event">91%</span></li>
           <li><span class="date">FF 45</span><span class="event">85%</span></li>
           <li><span class="date">Edge 13</span><span class="event">83%</span></li>
-          <li><span class="date">WebKit</span><span class="event">83%</span></li>
           <li><span class="date">Safari 9</span><span class="event">54%</span></li>
-        </ul>
-      </section>
-      <section data-bespoke-hash="runtimes">
-        <h2>Where we are - Runtimes</h2>
-        <ul>
-          <li><span class="date">XS6 7.1.45</span><span class="event">97%</span></li>
-          <li><span class="date">
-              <div>EchoJS</div>
-              <div>0.0.0-alpha2</div></span><span class="event">66%</span></li>
-          <li><span class="date">Node 5.0</span><span class="event">57%</span></li>
-          <li><span class="date">Node 4.0</span><span class="event">52%</span></li>
-          <li><span class="date">Node 0.12</span><span class="event">17%</span></li>
         </ul>
       </section>
       <section data-bespoke-hash="transpilers">
@@ -57,7 +45,7 @@
         <h2>What Works Everywhere?</h2>
         <h3>Syntax</h3>
         <ul>
-          <li>requires 'use strict' in some environments</li>
+          <li>* Some environments require a 'use strict' statement</li>
           <li><b>let</b></li>
           <li><b>const</b></li>
           <li>Arrow Functions</li>
@@ -129,16 +117,14 @@ MY_OBJECT.key = "otherValue";
       </section>
       <section data-bespoke-hash="arrow-functions">
         <h2>Arrow Functions</h2>
-        <pre><code class="language-javascript">(a1, a2, …, aN) => { statements }
-(a1, a2, …, aN) => expression
-  // equal to:  => { return expression; }
-  
+        <pre><code class="language-javascript">// Arrow functions are all bound to this
+(a1, a2, aN) => { foos } // function(a1, a2, aN) { foos }
+// implicit return
+(a1, a2, aN) => foo      // function(a1, a2, aN) { return foo }
+
 // Parentheses are optional when there's one parameter
 (singleParam) => { statements }
 singleParam => { statements }
-
-// A function with no parameters requires parentheses
-() => { statements }
 </code></pre>
       </section>
       <section data-bespoke-hash="object-literals">
