@@ -3,8 +3,6 @@ OpeningSlide.md (30 secs)
 Matt Blair
  - PSE at OT
  - Search Platform
- - Talk about JS
- - Modern History
  - where we are now
  - what you can do to use this tech today
 

@@ -13,11 +13,12 @@ html
 
       section(data-bespoke-hash='javascript-today')
         h1 JavaScript today
-        h3 How we got here, where we are, what's next
+        h3 Where we are, where we're going, what's next
         h3 Powered by <a href="http://tech.opentable.com/">OpenTable Engineering</a>
         h4 Matt Blair
         h5 Principal Software Engineer, Search Platform
         h5 mblair@opentable.com
+        h5 &nbsp;
         h5 http://blog.mattblair.co/forwardjs-2016-prezzo
         h5 https://github.com/duereg/forwardjs-2016-prezzo
 
@@ -25,7 +26,7 @@ html
         h2 Where we are - Browsers
         ul
           li
-            span.date Chrome 49+
+            span.date Chrome 49+, Opera 36+
             span.event 91%
           li
             span.date FF 45
@@ -34,32 +35,29 @@ html
             span.date Edge 13
             span.event 83%
           li
-            span.date WebKit
-            span.event 83%
-          li
             span.date Safari 9
             span.event 54%
 
-      section(data-bespoke-hash='runtimes')
-        h2 Where we are - Runtimes
-        ul
-          li
-            span.date XS6 7.1.45
-            span.event 97%
-          li
-            span.date
-              div EchoJS
-              div 0.0.0-alpha2
-            span.event 66%
-          li
-            span.date Node 5.0
-            span.event 57%
-          li
-            span.date Node 4.0
-            span.event 52%
-          li
-            span.date Node 0.12
-            span.event 17%
+      //- section(data-bespoke-hash='runtimes')
+      //-   h2 Where we are - Runtimes
+      //-   ul
+      //-     li
+      //-       span.date XS6 7.1.45
+      //-       span.event 97%
+      //-     li
+      //-       span.date
+      //-         div EchoJS
+      //-         div 0.0.0-alpha2
+      //-       span.event 66%
+      //-     li
+      //-       span.date Node 5.0
+      //-       span.event 57%
+      //-     li
+      //-       span.date Node 4.0
+      //-       span.event 52%
+      //-     li
+      //-       span.date Node 0.12
+      //-       span.event 17%
 
       section(data-bespoke-hash='transpilers')
         h2 Where we are - Transpilers
@@ -88,7 +86,7 @@ html
         h2 What Works Everywhere?
         h3 Syntax
         ul
-          li requires 'use strict' in some environments
+          li * Some environments require a 'use strict' statement
           li
             b let
           li
@@ -137,6 +135,7 @@ html
               let foo = 2;
             }
 
+      //- five minutes w/o slides
       section(data-bespoke-hash='const')
         h2 const
         pre
@@ -164,20 +163,19 @@ html
             // Object attributes are not protected
             MY_OBJECT.key = "otherValue";
 
+      //- 6 minutes
       section(data-bespoke-hash='arrow-functions')
         h2 Arrow Functions
         pre
           code.language-javascript.
-            (a1, a2, …, aN) => { statements }
-            (a1, a2, …, aN) => expression
-              // equal to:  => { return expression; }
+            // Arrow functions are all bound to this
+            (a1, a2, aN) => { foos } // function(a1, a2, aN) { foos }
+            // implicit return
+            (a1, a2, aN) => foo      // function(a1, a2, aN) { return foo }
 
             // Parentheses are optional when there's one parameter
             (singleParam) => { statements }
             singleParam => { statements }
-
-            // A function with no parameters requires parentheses
-            () => { statements }
 
       section(data-bespoke-hash='object-literals')
         h2 Object Literal Extensions
