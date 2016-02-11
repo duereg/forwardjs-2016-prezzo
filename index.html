@@ -135,9 +135,9 @@ var obj = {
   m: function(z) {return z + this.a},
 }
 obj[bar] = 104 // obj.foo
-Object.defineProperty(obj, bar + a, {
-  get: function() {return this.a() },
-}) //obj.foo103
+Object.defineProperty(obj, 'getA', {
+  get: function() {return this.a()},
+})
 </code></pre>
       </section>
       <section data-bespoke-hash="object-literals-2">
@@ -148,7 +148,7 @@ var obj = {
   a, // a:a, object shorthand
   m(z) {return z + this.a}, // function shorthand
   [bar]: 104, // Computed Property Names
-  get [bar + a]() {return this.a}
+  get getA() {return this.a}
 }
 </code></pre>
       </section>
@@ -179,7 +179,7 @@ console.log(`Fifteen is ${a + b} and\nnot ${2 * a + b}.`);
       <section data-bespoke-hash="set">
         <h2>Set</h2>
         <pre><code class="language-javascript">let s = new Set()
-s.add("hello").add("goodbye").add("hello")
+s.add("hello").add("hello").add({action: 'goodbye'})
 s.size === 2
 s.has("hello") === true
 for (let key of s.values()) // insertion order
@@ -239,7 +239,6 @@ Object.keys(obj) // []
           <li><img src="images/promises.png" width="400px" /></li>
         </ul>
       </section>
-      <!-- 16 minutes, rushing, not going over code-->
       <section data-bespoke-hash="what-else">
         <h2>What else is there?</h2>
         <ul>
