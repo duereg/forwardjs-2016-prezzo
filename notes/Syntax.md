@@ -1,6 +1,7 @@
 Syntax.md
 
-let - hoisting variables
+var - lexical scoped
+let - block scoped, no hoisting of variables
 
 const - Constants are block-scoped, like let
 

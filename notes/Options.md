@@ -1,6 +1,6 @@
 Options
- Client SPA in Chrome 49+
-  - gives you 91% of ES6
+ Client SPA in Chrome 52+, Opera 39+
+  - gives you 98% of ES6
   - does not give you module import/export
 
  IofT Application using XS6
@@ -15,6 +15,10 @@ Options
   - ES7 support
   - Custom plugin/transpiler support
   - JSX, TypeScript, Flow support
+
+Node 6 App
+ - 93% of ES6
+ - does not give you module import/export
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy#Examples
 

@@ -14,7 +14,6 @@ https://github.com/espadrine/New-In-A-Spec/tree/master/es2015
 ES6 - 6th edition, but 2015 release
 ES7 - released in 2016?
 
-
 http://xto6.js.org/
 https://github.com/thomasloh/5to6
 http://tvcutsem.github.io/js-membranes/

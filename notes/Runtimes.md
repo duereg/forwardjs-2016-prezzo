@@ -17,11 +17,14 @@ https://nodejs.org/en/docs/es6/#which-features-ship-with-node-js-by-default-no-r
          div 0.0.0-alpha2
        span.event 66%
      li
+       span.date Node 6.0
+       span.event 93%
+     li
        span.date Node 5.0
-       span.event 57%
+       span.event 56%
      li
        span.date Node 4.0
-       span.event 52%
+       span.event 50%
      li
        span.date Node 0.12
-       span.event 17%
+       span.event 18%
