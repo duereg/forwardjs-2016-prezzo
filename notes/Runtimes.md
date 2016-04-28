@@ -25,6 +25,3 @@ https://nodejs.org/en/docs/es6/#which-features-ship-with-node-js-by-default-no-r
      li
        span.date Node 4.0
        span.event 50%
-     li
-       span.date Node 0.12
-       span.event 18%
