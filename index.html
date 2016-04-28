@@ -131,9 +131,9 @@ MY_OBJECT.key = "otherValue";
       <section data-bespoke-hash="arrow-functions">
         <h2>Arrow Functions</h2>
         <pre><code class="language-javascript">// Arrow functions are all bound to this
-(a1, a2, aN) => { foos } // function(a1, a2, aN) { foos }
+(param) => { param++; } // function(param) { param++; }
 // implicit return
-(a1, a2, aN) => a1 + a2  // function(a1, a2, aN) { return a1 + a2 }
+(a1, a2, aN) => a1 + a2  // function(a1, a2, aN) { return a1 + a2; }
 
 // Parentheses are optional when there's one parameter
 (singleParam) => { statements }
